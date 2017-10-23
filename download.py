@@ -14,18 +14,15 @@ import os
 import urllib2
 
 
-########### Edit From Here ###########
+#gets the length of the commandline arguments and joins them in a single string
+sys.argv[0] = ""
+keyword = " ".join(sys.argv)
 
 #Gets the search keyword from the commandline argument
-search_keyword = [sys.argv[1]]
+search_keyword = [keyword]
 
 #This list is used to further add suffix to your search term. Each element of the list will help you download 100 images. First element is blank which denotes that no suffix is added to the search keyword of the above list. You can edit the list by adding/deleting elements from it.So if the first element of the search_keyword is 'Australia' and the second element of keywords is 'high resolution', then it will search for 'Australia High Resolution'
 keywords = [' high resolution']
-
-########### End of Editing ###########
-
-
-
 
 #Downloading entire Web Document (Raw Page Content)
 def download_page(url):
